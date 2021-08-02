@@ -1,0 +1,19 @@
+---
+# defaults file for sendmail
+sendmail_host: "smtp.na.xom.com"
+sendmail_port: "25"
+sendmail_from: "ansible-APMSelfHealing@exxonmobil.com"
+sendmail_to:
+  - zulfadhli.nasir@exxonmobil.com
+  #- kristof.kreszan@exxonmobil.com
+sendmail_cc: ""
+sendmail_subject: "Ansible Report - APM Self Healing"
+sendmail_body: |
+  Report:
+  Based from splunk log (goto/splunk_apm_issue), {{ profile_fact }} in {{nodelabel_fact}} was detected having issue.
+
+  Action Taken:
+  {{action_fact}}
+#sendmail_attach:
+#  - tmp/asareport.xls
+#sendmail_subtype: "html"
